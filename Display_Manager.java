@@ -14,12 +14,25 @@ public class Display_Manager {
     {
         System.out.println("Please enter the number of results that you want to display!");
         System.out.println("We have currently "+e_v.size()+" events stored in our database.");
-        System.out.println("Type: \"0\" to EXIT.");
+        System.out.println("Type \"0\" to GO BACK TO MENU.");
+    }
+    public void display_menu_teams()
+    {
+        System.out.println("The list of all teams in alphabetic order.");
+        System.out.println("Type \"0\" to GO BACK TO MENU.");
     }
 
     public void display_input_not_int() { System.out.println("INVALID INPUT. Please enter an integer.\n"); }
     public void display_input_out_of_range() { System.out.println("INVALID INPUT. Please enter integer within the number of events in database."); }
-    
+    public void display_input_error() { System.out.println("INVALID INPUT"); }
+    public void display_menu()
+    {
+        System.out.println("WELCOME in UEFA Champions League app made by Hubert Rutkowski");
+        System.out.println("Type \"1\" to open Probability Menu");
+        System.out.println("Type \"2\" to open Teams Menu");
+        System.out.println("Type \"3\" to EXIT");
+    }
+
     private String get_highest_result_name(Event event)
     {
         double maxProbability = event.getProbability_home_team_winner();
