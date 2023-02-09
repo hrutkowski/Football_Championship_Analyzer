@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Program {
@@ -16,12 +17,22 @@ public class Program {
 
         while(!stop)
         {
-            display_manager.display_menu_probability();
-            int amount = scanner.nextInt();
-            for (int i=0; i<amount; i++) { display_manager.display_result(event_vector.get(i), i+1);}
+            int amount=0;
+            try
+            {
+                display_manager.display_menu_probability(event_vector);
+                amount = scanner.nextInt();
+            }
+            catch(InputMismatchException e)
+            {
+                display_manager.display_input_not_int();
+                scanner.nextLine();
+                continue;
+            }
+            if (amount <= event_vector.size()) for (int i = 0; i < amount; i++) { display_manager.display_result(event_vector.get(i), i + 1); }
+            else display_manager.display_input_out_of_range();
             System.out.flush();
             if (amount == 0) { stop = true; }
         }
-
     }
 }
