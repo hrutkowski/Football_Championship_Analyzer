@@ -19,7 +19,7 @@ public class JSON_Worker {
             while (i_event.hasNext())
             {
                 JSONObject event = (JSONObject) i_event.next();
-                    Event event_HR = new Event((String)event.get("sport_event_id"), (String)event.get("sport_date"), (String)event.get("sport_name"),
+                    Event event_HR = new Event((String)event.get("sport_event_id"), (String)event.get("start_date"), (String)event.get("sport_name"),
                             (String)event.get("competition_name"), (String)event.get("competition_id"), (String)event.get("season_name"),
                             number_worker.changeToDouble((Object)event.get("probability_home_team_winner")), number_worker.changeToDouble((Object)event.get("probability_draw")),
                             number_worker.changeToDouble((Object)event.get("probability_away_team_winner")));
