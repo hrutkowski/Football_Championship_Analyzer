@@ -11,11 +11,11 @@ public class Console_Teams extends Console {
     {
         boolean stop = false;
         Team_Name_Worker team_name_worker = new Team_Name_Worker();
+        display_manager.display_menu_teams();
+        display_manager.display_teams(team_name_worker.get_unique_names(event_vector));
         while(!stop)
         {
             int exit;
-            display_manager.display_menu_teams();
-            display_manager.display_teams(team_name_worker.get_unique_names(event_vector));
             display_manager.display_teams_exit();
             display_manager.display_input();
             try { exit = scanner.nextInt(); }
@@ -26,6 +26,7 @@ public class Console_Teams extends Console {
                 continue;
             }
             if (exit == 0) { stop = true; }
+            else display_manager.display_input_error();
         }
     }
 }
