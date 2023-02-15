@@ -7,14 +7,14 @@ It takes the date form a .json file and converts for very useful classes. Obviou
 How to run the program?
 You have two possible ways to run the program.
 
-A)
+A) Usage of terminal:
 1. Open terminal.
 2. Find the location of Sport Program folder.
 3. Go inside Sport Program folder.
 4. Use command: java -jar Sportradar_Repository.jar
 
-B) 
-( It requires a possesion of IDE (Integrated Development Environment). I highly reccomend IntelliJ IDEA. )
+B) Usage of IDE:
+(I highly recommend IntelliJ IDEA, but those simple steps should look nearly the same or familiar in other IDE.)
 1) Build the whole project.
 2) Go to the Main class.
 3) Run "Main.java" (This class has only one method/function that is main().
