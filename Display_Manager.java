@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 public class Display_Manager {
 
     public void display_result(Event event, int i)
@@ -10,21 +12,27 @@ public class Display_Manager {
         System.out.println("Highest probable result: "+ get_highest_result_name(event)+ " ("+event.getMax_probability()+")\n");
     }
 
+    public void display_teams(Vector<String> vector) { for(String text : vector) { System.out.println(text); } }
+
+    public void display_input() { System.out.print("\nYour choice: "); }
+
     public void display_menu_probability(Event_Vector e_v)
     {
         System.out.println("Please enter the number of results that you want to display!");
         System.out.println("We have currently "+e_v.size()+" events stored in our database.");
         System.out.println("Type \"0\" to GO BACK TO MENU.");
     }
-    public void display_menu_teams()
-    {
-        System.out.println("The list of all teams in alphabetic order.");
-        System.out.println("Type \"0\" to GO BACK TO MENU.");
-    }
+
+    public void display_menu_teams() { System.out.println("The list of all teams in alphabetic order."); }
+
+    public void display_teams_exit() { System.out.println("\nType \"0\" to GO BACK TO MENU."); }
 
     public void display_input_not_int() { System.out.println("INVALID INPUT. Please enter an integer.\n"); }
+
     public void display_input_out_of_range() { System.out.println("INVALID INPUT. Please enter integer within the number of events in database."); }
+
     public void display_input_error() { System.out.println("INVALID INPUT"); }
+
     public void display_menu()
     {
         System.out.println("WELCOME in UEFA Champions League app made by Hubert Rutkowski");

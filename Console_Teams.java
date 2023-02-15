@@ -10,14 +10,15 @@ public class Console_Teams extends Console {
     public void run()
     {
         boolean stop = false;
+        Team_Name_Worker team_name_worker = new Team_Name_Worker();
         while(!stop)
         {
-            int exit = 0;
-            try
-            {
-                display_manager.display_menu_teams();
-                exit = scanner.nextInt();
-            }
+            int exit;
+            display_manager.display_menu_teams();
+            display_manager.display_teams(team_name_worker.get_unique_names(event_vector));
+            display_manager.display_teams_exit();
+            display_manager.display_input();
+            try { exit = scanner.nextInt(); }
             catch(InputMismatchException e)
             {
                 display_manager.display_input_not_int();

@@ -12,12 +12,10 @@ public class Console_Probability extends Console {
         boolean stop = false;
         while(!stop)
         {
-            int amount = 0;
-            try
-            {
-                display_manager.display_menu_probability(event_vector);
-                amount = scanner.nextInt();
-            }
+            int amount;
+            display_manager.display_menu_probability(event_vector);
+            display_manager.display_input();
+            try { amount = scanner.nextInt(); }
             catch(InputMismatchException e)
             {
                 display_manager.display_input_not_int();

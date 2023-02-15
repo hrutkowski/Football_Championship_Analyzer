@@ -26,7 +26,9 @@ public class Console_Manager {
         {
             int choice;
             display_manager.display_menu();
-            try { choice = scanner.nextInt(); }
+            display_manager.display_input();
+            try {
+                choice = scanner.nextInt(); }
             catch(InputMismatchException e)
             {
                 display_manager.display_input_not_int();
